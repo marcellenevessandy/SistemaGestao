@@ -1,4 +1,4 @@
-# <p style="color: pink;">Sistema de Gestão de Despesas Mensais</p>
+# Sistema de Gestão de Despesas Mensais
 
 <img src="marcelle.jpg" width="80" he
 ight="80">
@@ -14,28 +14,28 @@ O Sistema de Gestão de Despesas Mensais é estruturado com quatro tabelas princ
 
 ## Detalhes das Tabelas 
 
-<p style="color: pink;">Na tabela <strong>Usuarios</strong>, estão presentes as seguintes colunas:</p>
+**Na tabela Usuarios, estão presentes as seguintes colunas:**
 
 IdUsuario INT AUTO_INCREMENT PRIMARY KEY NOT NULL<br>
 Nome VARCHAR(255) NOT NULL<br>
 Email VARCHAR(100) NOT NULL<br>
 Senha VARCHAR(8) NOT NULL<br>
 
-<p style="color: pink;">Na tabela <strong>Categoria</strong>, estão presentes as seguintes colunas:</p>
+**Na tabela Categoria, estão presentes as seguintes colunas:**
 
 IdCategoria INT AUTO_INCREMENT PRIMARY KEY NOT NULL<br>
 NomeCategoria VARCHAR(100) NOT NULL<br>
 DescricaoCategoria VARCHAR(100) DEFAULT NULL<br>
 Tipo VARCHAR(45) NOT NULL<br>
 
-<p style="color: pink;">Na tabela <strong>ContasBancarias</strong>, estão presentes as seguintes colunas:</p>
+**Na tabela ContasBancarias, estão presentes as seguintes colunas:**
 
 IdContasBancarias INT AUTO_INCREMENT PRIMARY KEY NOT NULL<br>
 NomeBanco VARCHAR(45) NOT NULL<br>
 AgenciaConta VARCHAR(20) NOT NULL UNIQUE<br>
 NumeroConta VARCHAR(20) NOT NULL UNIQUE<br>
 
-<p style="color: pink;">Na tabela <strong>Metas</strong>, estão presentes as seguintes colunas:</p>
+**Na tabela <strong>Metas</strong>, estão presentes as seguintes colunas:**
 
 IdMetas INT AUTO_INCREMENT PRIMARY KEY NOT NULL<br>
 DescricaoMeta VARCHAR(100) DEFAULT NULL<br>
@@ -45,7 +45,7 @@ ValorMeta DECIMAL(10,2) NOT NULL<br>
 Status VARCHAR(45) NOT NULL<br>
 DataFinal DATE NOT NULL<br>
 
-<p style="color: pink;">Na tabela <strong>Movimentacoes</strong>, estão presentes as seguintes colunas:</p>
+**Na tabela <strong>Movimentacoes</strong>, estão presentes as seguintes colunas:**
 
 IdMovimentacoes INT AUTO_INCREMENT PRIMARY KEY NOT NULL<br>
 DescricaoMovimentacoes VARCHAR(100) DEFAULT NULL<br>
@@ -59,4 +59,3 @@ DataMovimentacao DATE NOT NULL<br>
 ## Relacionamentos
 No banco de dados, as tabelas estão inter-relacionadas para garantir a integridade dos dados. A tabela ContasBancarias referencia Usuarios através da coluna Usuarios_IdUsuario, associando cada conta a um usuário específico. A tabela Metas está vinculada à Categoria por meio da coluna Categoria_IdCategoria, ligando cada meta a uma categoria. As movimentações financeiras na tabela Movimentacoes referenciam tanto ContasBancarias quanto Categoria por suas respectivas chaves estrangeiras (ContasBancarias_IdContasBancarias e Categoria_IdCategoria), assegurando que cada movimentação esteja associada a uma conta e a uma categoria específicas. As regras ON DELETE CASCADE garantem que a exclusão de um usuário, categoria ou conta bancária remova automaticamente as entradas associadas nas tabelas relacionadas.
 
-<p style="color: pink;">Desenvolvido por Marcelle Sandy</p>
